@@ -2,19 +2,19 @@ package com.devsuperior.dscatalog.resources.exceptions;
 
 import java.io.Serializable;
 
-public class FieldMessege implements Serializable {
+public class FieldMessage implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private String fieldName;
-	private String messege;
+	private String message;
 	
-	public FieldMessege() {
+	public FieldMessage() {
 	}
 
-	public FieldMessege(String fieldName, String messege) {
+	public FieldMessage(String fieldName, String message) {
 		super();
 		this.fieldName = fieldName;
-		this.messege = messege;
+		this.message = message;
 	}
 
 	public String getFieldName() {
@@ -25,12 +25,12 @@ public class FieldMessege implements Serializable {
 		this.fieldName = fieldName;
 	}
 
-	public String getMessege() {
-		return messege;
+	public String getMessage() {
+		return message;
 	}
 
-	public void setMessege(String messege) {
-		this.messege = messege;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 	
 }
