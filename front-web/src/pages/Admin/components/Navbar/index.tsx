@@ -5,13 +5,19 @@ const Navbar = () => (
     <nav className="admin-nav-container">
         <ul>
             <li>
-                <NavLink to="/admin/products" className="admin-nav-item ">Meus Produtos</NavLink>
+                <NavLink to="/admin/products" className="admin-nav-item ">
+                    Meus Produtos
+                </NavLink>
             </li>
             <li>
-                <NavLink to="/admin/categories" className="admin-nav-item ">Minha Categorias</NavLink>
+                <NavLink to="/admin/categories" className="admin-nav-item ">
+                    Minha Categorias
+                </NavLink>
             </li>
             <li>
-                <NavLink to="/admin/users" className="admin-nav-item">Meus Usuários</NavLink>
+                <NavLink to="/admin/users" className="admin-nav-item">
+                    Meus Usuários
+                </NavLink>
             </li>
         </ul>
     </nav>
