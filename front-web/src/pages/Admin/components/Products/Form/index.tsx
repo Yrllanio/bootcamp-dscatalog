@@ -30,6 +30,7 @@ const Form = () => {
     const [categories, setCategories] = useState<Category[]>([])
     const [uploadedImgUrl, setUploadedImgUrl] = useState('');
     const [productImgUrl, setProductImgUrl] = useState('');
+
     const isEditing = productId !== 'create';
     const formTitle = isEditing ? 'Editar produto' : 'Cadastrar um produto';
 
@@ -57,7 +58,7 @@ const Form = () => {
     const onSubmit = (data: FormState) => {          
         const payload = {
             ...data,
-            imgUrl: uploadedImgUrl
+            imgUrl: uploadedImgUrl || productImgUrl
         }
         
 
