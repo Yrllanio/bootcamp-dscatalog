@@ -7,15 +7,15 @@ import { Link } from 'react-router-dom';
 
 const Home = () => (
     <div className="home-container">
-        <div className="row home-content card-base border-radius-20">
-           <div className="col-6 home-text">
+        <div className="home-content card-base border-radius-20">
+           <div className="home-text">
            <h1 className="text-title">
                Conheça o melhor<br/> catálogo de produtos
             </h1>
             <p className="text-subtitle">
                 Ajudaremos você a encontrar os melhores<br/> produtos diponíveis no mercado.
             </p>
-            <Link to="/products">
+            <Link to="/products" className="startSearchBtn">
                 <ButtonIcon text="inicie agora sua busca" />
             </Link>
            </div>

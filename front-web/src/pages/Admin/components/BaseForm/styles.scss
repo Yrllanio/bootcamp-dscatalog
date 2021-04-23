@@ -2,6 +2,7 @@
 .admin-base-form {
     padding: 70px 45px 50px 45px;
     border-radius: 20px;
+    width: 1055px;
 }
 
 .base-form-title {
@@ -16,4 +17,18 @@
 .base-form-actions {
     margin-top: 70px;
     text-align: right;
+}
+
+@media (max-width: 768px) {
+    .admin-base-form {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .admin-base-form {
+        width: 100%;
+        flex-direction: column;
+        padding: 70px 45px 50px 45px;
+    }
 }

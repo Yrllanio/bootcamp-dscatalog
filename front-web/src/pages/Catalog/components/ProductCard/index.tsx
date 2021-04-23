@@ -1,4 +1,4 @@
-import { Product } from 'core/types/Products';
+import { Product } from 'core/types/Product';
 import ProductPrice from 'core/components/ProductPrice';
 import './styles.scss';
 

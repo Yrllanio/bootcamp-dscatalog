@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Category, ProductsResponse } from 'core/types/Products';
+import { Category, ProductsResponse } from 'core/types/Product';
 import { makeRequest } from 'core/utils/request';
 import ProductCard from './components/ProductCard';
 import ProductCardLoader from './components/Loaders/ProductCardLoader';
@@ -10,7 +10,7 @@ import './styles.scss';
 
 const Catalog = () => {
    
-    const [productResponse, setProductResponse] = useState<ProductsResponse>();
+    const [productsResponse, setProductsResponse] = useState<ProductsResponse>();
     const [isLoading, setIsloading] = useState(false)
     const [activePage, setActivePage] = useState(0);
     const [name, setName] = useState('');
@@ -19,14 +19,14 @@ const Catalog = () => {
     const getProducts = useCallback(() => {
         const params = {
             page: activePage,
-            linesPerPage: 12,
+            linesPerPage: 10,
             name,
             categoryId: category?.id
         }
 
         setIsloading(true);
         makeRequest({ url: '/products', params})
-        .then(response => setProductResponse(response.data))
+        .then(response => setProductsResponse(response.data))
         .finally(() => {
             setIsloading(false);
         })
@@ -55,7 +55,7 @@ const Catalog = () => {
     
     return (
         <div className="catalog-container">
-            <div className="d-flex justify-content-between">
+            <div className="filter-container">
                 <h1 className="catalog-title">
                     Catálogo de produtos
                 </h1>
@@ -68,8 +68,8 @@ const Catalog = () => {
                 />
             </div>
             <div className="catalog-products">
-                {isLoading ? <ProductCardLoader /> : (
-                    productResponse?.content.map(product => (
+                {isLoading ? (<ProductCardLoader />) : (
+                    productsResponse?.content.map(product => (
                         <Link to={`/products/${product.id}`} key={product.id}>
                             <ProductCard product={product}/>
                         </Link>
@@ -77,9 +77,9 @@ const Catalog = () => {
                 )}
                      
             </div>
-            {productResponse && (
+            {productsResponse && (
             <Pagination
-            totalPages={productResponse.totalPages}
+            totalPages={productsResponse.totalPages}
             activePage={activePage}
             onChange={page => setActivePage(page)}
             />

@@ -1,5 +1,5 @@
 import { ReactComponent as SearchIcon } from 'core/assets/images/search-icon.svg';
-import { Category } from 'core/types/Products';
+import { Category } from 'core/types/Product';
 import { makeRequest } from 'core/utils/request';
 import { useEffect, useState } from 'react';
 import Select from 'react-select';

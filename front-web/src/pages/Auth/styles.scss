@@ -2,7 +2,7 @@
     display: flex;
     padding: 40px 40px 100px 0;
     justify-content: center;
-    background: url(~core/assets/images/auth-background.svg) no-repeat;
+    background: url(~core/assets/images/auth-background.svg) no-repeat bottom;
     background-size: 100%;
 }
 
@@ -21,4 +21,17 @@
     line-height: 33px;
     letter-spacing: -0.015em;
     color: #9E9E9E;
+}
+
+@media (max-width: 768px) {
+    .auth-info {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .auth-container {
+        margin: 0px;
+        padding: 20px 0px 0px 0px;
+    }
 }

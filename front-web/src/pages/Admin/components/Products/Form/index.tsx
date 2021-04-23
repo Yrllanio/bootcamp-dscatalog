@@ -6,7 +6,7 @@ import BaseForm from '../../BaseForm';
 import './styles.scss';
 import { useHistory, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { Category } from 'core/types/Products';
+import { Category } from 'core/types/Product';
 import PriceField from './PriceField';
 import ImageUpload from '../ImageUpload';
 
@@ -84,7 +84,7 @@ const Form = () => {
             <BaseForm
                 title={formTitle}
             >
-                <div className="row">
+                <div className="product-form-container">
                     <div className="col-6">
                         <div className="margin-bottom-30">
                         <input
