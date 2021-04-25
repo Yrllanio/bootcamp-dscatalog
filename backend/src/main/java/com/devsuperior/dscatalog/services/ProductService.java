@@ -57,12 +57,7 @@ public class ProductService {
 	@Transactional
 	public ProductDTO insert(ProductDTO dto) {
 		Product entity = new Product();
-		copyDtoToEntity(dto, entity);
-		/*
-		 * if (entity.getCategories().size() == 0) { //gambiarra temporária para inserir
-		 * uma categoria. Category cat = categoryRepository.getOne(1L);
-		 * entity.getCategories().add(cat); }
-		 */
+		copyDtoToEntity(dto, entity);		
 		entity = repository.save(entity);
 		return new ProductDTO(entity);
 	}
@@ -71,12 +66,7 @@ public class ProductService {
 	public ProductDTO update(Long id, ProductDTO dto) {
 		try {
 			Product entity = repository.getOne(id);
-			copyDtoToEntity(dto, entity);
-			/*
-			 * if (entity.getCategories().size() == 0) { //gambiarra temporária para inserir
-			 * uma categoria. Category cat = categoryRepository.getOne(1L);
-			 * entity.getCategories().add(cat); }
-			 */
+			copyDtoToEntity(dto, entity);			
 			entity = repository.save(entity);
 			return new ProductDTO(entity);
 		} catch (EntityNotFoundException e) {

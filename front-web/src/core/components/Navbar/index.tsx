@@ -1,5 +1,5 @@
 import { Link, NavLink, useLocation } from 'react-router-dom'
-import { getAccessTokenDecoded, logout } from 'core/utils/auth';
+import { getAccessTokenDecoded, logout, isAuthenticated } from 'core/utils/auth';
 import { useEffect, useState } from 'react';
 import './styles.scss';
 import menu from 'core/assets/images/menu.svg';
@@ -55,7 +55,7 @@ const Navbar = () => {
                     drawerActive && (
                     <li>
                         {
-                        currentUser && (
+                        isAuthenticated() && (
                             <a href="#logout"
                                 className="nav-link active d-inline"
                                 onClick={(e) => {
@@ -71,7 +71,7 @@ const Navbar = () => {
                     {
                         drawerActive && (
                             <>
-                            {!currentUser && (
+                            {!isAuthenticated() && (
                                 <li>
                                     <Link to="/auth/login"
                                         onClick={() => setDrawerActive(false)}
@@ -86,7 +86,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="user-info-dnone text-right">
-                {currentUser && (
+                {isAuthenticated() && (
                     <>
                         {currentUser}
                         <a
@@ -101,7 +101,7 @@ const Navbar = () => {
                     </a>
                     </>
                 )}
-                {!currentUser && (
+                {!isAuthenticated() && (
                     <Link to="/auth/login" onClick={() => setDrawerActive(false)} className="nav-link active">
                         LOGIN
                     </Link>
